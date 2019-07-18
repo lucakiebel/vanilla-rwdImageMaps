@@ -1,5 +1,5 @@
 /*
-* rwdImageMaps vanilla Function v1.0
+* rwdImageMaps vanilla Function v1.1
 *
 * Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize
 *
@@ -8,7 +8,7 @@
 * https://luca-kiebel.de
 * Licensed under the MIT license
 */
-function rwdImageMaps(selector,array=false) {
+function rwdImageMaps(selector,array) {
   let elmnt;
   if(!array) {//the supplied selector should be used with querySelector
     elmnt=document.querySelector(selector);
