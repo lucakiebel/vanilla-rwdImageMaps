@@ -1,5 +1,5 @@
 /*
-* rwdImageMaps vanilla Function v1.1
+* rwdImageMaps vanilla Function v1.2
 *
 * Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize
 *
@@ -9,7 +9,7 @@
 * Licensed under the MIT license
 */
 function rwdImageMaps(selector,array) {
-  let elmnt;
+  var elmnt;
   if(!array) {//the supplied selector should be used with querySelector
     elmnt=document.querySelector(selector);
     if (typeof(elment.getAttribute('usemap')) == 'undefined') // if the element doesn't have a map attached, return
@@ -17,24 +17,24 @@ function rwdImageMaps(selector,array) {
     addMapToElement(element);
   } else {// the supplied selector should be applied in a loop
     elmnt=document.querySelectorAll(selector);
-    for(let i = 0; i<elements.length; i++) {
+    for(var i = 0; i<elements.length; i++) {
       addMapToElement(element[i]);
     }
   }
   function addMapToElement(el) {
     // Since WebKit doesn't know the height until after the image has loaded, perform everything in an onload copy
     el.addEventListener("load", function(e) {
-      let w = el.getAttribute("width"),
+      var w = el.getAttribute("width"),
 			h = el.getAttribute("height");
       if (!w || !h) {
-        let temp = new Image();
+        var temp = new Image();
         temp.src = el.getAttribute("src");
         if (!w)
           w = temp.width;
         if (!h)
           h = temp.height;
       }
-      let wPercent = el.width/100,
+      var wPercent = el.width/100,
       hPercent = el.height/100,
       map = el.getAttribute('usemap').replace('#', ''),
       c = 'coords';
@@ -42,7 +42,7 @@ function rwdImageMaps(selector,array) {
         if(!this.dataset[c])
           this.dataset[c]=this.getAttribute(c);
         
-        let coords = this.dataset[c].split(','),
+        var coords = this.dataset[c].split(','),
 							coordsPercent = new Array(coords.length);
 
         for (var i = 0; i < coordsPercent.length; ++i) {
