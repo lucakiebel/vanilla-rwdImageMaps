@@ -38,4 +38,4 @@ https://git.luca-kiebel.de/vanilla-rwdImageMaps/example.html
 
 Copyright (c) 2019 [Luca Kiebel](https://luca-kiebel.de)  
 Licensed under the MIT license *(see [LICENSE](https://github.com/lucakiebel/vanilla-rwdImageMaps/blob/master/LICENSE) for details)*  
-Minified version created with Online YUI Compressor: http://www.refresh-sf.com/yui/
+Minified version created with JSCompress: https://jscompress.com
