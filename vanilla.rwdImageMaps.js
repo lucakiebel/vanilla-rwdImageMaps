@@ -1,5 +1,5 @@
 /*
-* rwdImageMaps vanilla Function v1.2
+* rwdImageMaps vanilla Function v1.4
 *
 * Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize
 *
@@ -56,6 +56,6 @@ function rwdImageMaps(selector,array) {
       el.setAttribute("src",el.getAttribute("src"));
     });
   }
-  window.addEventListener("resize",() =>addMapToElement(elmnt));
+  window.addEventListener("resize",function() {addMapToElement(elmnt)});
   window.dispatchEvent(new Event("resize"));
 }
