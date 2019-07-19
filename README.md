@@ -16,13 +16,7 @@ This project is a vanilla JS clone of [stowball's jQuery-rwdImageMaps](https://g
 rwdImageMaps('img[usemap]');
 ```
 
-If you want this applied to all your maps, pass `true` as the second parameter:
-
-```js
-rwdImageMaps('img[usemap]', true);
-```
-
-You may also want to wait until the Document has loaded before running the function (this is similar to `$(document).ready()`):
+You may want to wait until the Document has loaded before running the function (this is similar to `$(document).ready()`):
 
 ```js
 document.addEventListener("DOMContentLoaded", function(e) {
