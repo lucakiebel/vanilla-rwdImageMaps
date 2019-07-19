@@ -1,5 +1,5 @@
 /*
-* rwdImageMaps vanilla Function v1.8
+* rwdImageMaps vanilla Function v1.9
 *
 * Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize
 *
@@ -37,12 +37,19 @@ function rwdImageMaps(selector) {
 					var coords = ar.dataset[c].split(','),
 					coordsPercent = new Array(coords.length);
 
-					for (var i = 0; i < coordsPercent.length; ++i) {
-						if (i % 2 === 0)
-							coordsPercent[i] = parseInt(((coords[i]/w)*100)*wPercent);
-						else
-							coordsPercent[i] = parseInt(((coords[i]/h)*100)*hPercent);
+					if("circle"!==ar.getAttribute("shape")) {
+						for (var i = 0; i < coordsPercent.length; ++i) {
+							if (i % 2 === 0)
+								coordsPercent[i] = parseInt(((coords[i]/w)*100)*wPercent);
+							else
+								coordsPercent[i] = parseInt(((coords[i]/h)*100)*hPercent);
+						}
+					} else {
+						coordsPercent[0] = parseInt(((coords[0]/w)*100)*wPercent);
+						coordsPercent[1] = parseInt(((coords[1]/w)*100)*hPercent);
+						coordsPercent[2] = coords[2]; // fix for circle radii
 					}
+
 					ar.setAttribute(c, coordsPercent.toString());
 				});
 				el.setAttribute("src",el.getAttribute("src"));
