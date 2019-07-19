@@ -1,5 +1,5 @@
 /*
-* rwdImageMaps vanilla Function v1.5
+* rwdImageMaps vanilla Function v1.6
 *
 * Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize
 *
@@ -29,11 +29,11 @@ function rwdImageMaps(selector) {
 				hPercent = el.height/100,
 				map = el.getAttribute('usemap').replace('#', ''),
 				c = 'coords';
-				Array.from(document.querySelector('map[name="' + map + '"]').querySelectorAll("area")).forEach(function() {
-					if(!this.dataset[c])
-						this.dataset[c]=this.getAttribute(c);
+				Array.from(document.querySelector('map[name="' + map + '"]').querySelectorAll("area")).forEach(function(ar) {
+					if(!ar.dataset[c])
+						ar.dataset[c]=ar.getAttribute(c);
 
-					var coords = this.dataset[c].split(','),
+					var coords = ar.dataset[c].split(','),
 					coordsPercent = new Array(coords.length);
 
 					for (var i = 0; i < coordsPercent.length; ++i) {
@@ -42,7 +42,7 @@ function rwdImageMaps(selector) {
 						else
 							coordsPercent[i] = parseInt(((coords[i]/h)*100)*hPercent);
 					}
-					this.setAttribute(c, coordsPercent.toString());
+					ar.setAttribute(c, coordsPercent.toString());
 				});
 				el.setAttribute("src",el.getAttribute("src"));
 			});
