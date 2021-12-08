@@ -8,7 +8,7 @@ This project is a vanilla JS clone of [stowball's jQuery-rwdImageMaps](https://g
 
 #### Usage:
 
-* Include the script in your project (either by [downloading it](https://github.com/lucakiebel/vanilla-rwdImageMaps/archive/v1.4.zip), or by [using jsdelivr](https://cdn.jsdelivr.net/gh/lucakiebel/vanilla-rwdImageMaps@1.4/vanilla.rwdImageMaps.min.js)).
+* Include the script in your project (either by [downloading it](https://github.com/lucakiebel/vanilla-rwdImageMaps/archive/v1.4.zip), or by [using jsdelivr](https://cdn.jsdelivr.net/gh/lucakiebel/vanilla-rwdImageMaps@1.9/vanilla.rwdImageMaps.min.js)).
 * If possible, add [correct, unitless](http://dev.w3.org/html5/markup/img.html) `width` and `height` attributes to your image map images. You can override these in CSS to make them responsive.
 * Just call the `rwdImageMaps()` function after you loaded in the script:
 
